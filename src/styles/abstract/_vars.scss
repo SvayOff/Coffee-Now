@@ -1,0 +1,31 @@
+/* colors */
+$primaryL: #bbab8c;
+$secondaryL: #faeed1;
+$accentL: #ded0b6;
+$coffee: #522c20;
+$bgL: #fdf7e4;
+$black: #1d1d1d;
+$green: rgb(74, 175, 74);
+
+/* mixin */
+
+@mixin fLight {
+  font-family: 'Cormorant Infant', serif;
+  font-weight: 300;
+}
+@mixin fRegular {
+  font-family: 'Cormorant Infant', serif;
+  font-weight: 400;
+}
+@mixin fMedium {
+  font-family: 'Cormorant Infant', serif;
+  font-weight: 500;
+}
+@mixin fSemiBold {
+  font-family: 'Cormorant Infant', serif;
+  font-weight: 600;
+}
+@mixin fBold {
+  font-family: 'Cormorant Infant', serif;
+  font-weight: 700;
+}

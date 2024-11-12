@@ -1,0 +1,495 @@
+.header {
+  padding: 20px;
+  &__inner {
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    &-image {
+    }
+  }
+
+  &__navigation {
+    font-size: 18px;
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-item {
+      & + & {
+        margin-left: 15px;
+      }
+    }
+
+    &-dropdown {
+      position: relative;
+      .header__navigation-link {
+        padding-right: 15px;
+      }
+      &:hover {
+        .header__navigation-sublist {
+          height: auto;
+          opacity: 1;
+          visibility: visible;
+          padding: 15px;
+        }
+        .header__navigation-subitem + .header__navigation-subitem {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &-link {
+      position: relative;
+      color: $coffee;
+      @include fSemiBold;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &-sublist {
+      position: absolute;
+      left: 0;
+      top: 30px;
+      padding: 0 15px;
+      background-color: $secondaryL;
+      border-radius: 10px;
+      width: max-content;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -8px;
+        width: 100%;
+        height: 8px;
+        background-color: transparent;
+      }
+    }
+
+    &-subitem {
+      & + & {
+        margin-top: 0px;
+        transition: margin 0.5s ease;
+      }
+    }
+
+    &-sublink {
+      color: $coffee;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__burger {
+  }
+
+  &__lang {
+    &-title {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    &-list {
+    }
+
+    &-item {
+    }
+  }
+
+  &__futures {
+    display: flex;
+    align-items: center;
+  }
+
+  &__wishlist,
+  &__cart {
+  }
+
+  &__wishlist {
+    margin-right: 20px;
+    &-icon {
+    }
+
+    &-count {
+    }
+
+    &-wrapper {
+    }
+
+    &-title {
+    }
+
+    &-products {
+    }
+
+    &-product {
+    }
+
+    &-image {
+    }
+
+    &-info {
+    }
+
+    &-name {
+    }
+
+    &-ingredients {
+    }
+
+    &-ingredient {
+    }
+
+    &-price {
+    }
+
+    &-remove {
+    }
+  }
+
+  &__cart {
+    &-icon {
+    }
+
+    &-count {
+    }
+
+    &-wrapper {
+    }
+
+    &-title {
+    }
+
+    &-products {
+    }
+
+    &-product {
+    }
+
+    &-image {
+    }
+
+    &-info {
+    }
+
+    &-name {
+    }
+
+    &-ingredients {
+    }
+
+    &-ingredient {
+    }
+
+    &-counting {
+    }
+
+    &-add {
+    }
+
+    &-value {
+    }
+
+    &-price {
+    }
+
+    &-remove {
+    }
+
+    &-total {
+    }
+  }
+
+  &__bottom {
+  }
+}
+
+
+.wishlist,
+.cart {
+  position: relative;
+  &.show {
+    .wishlist__wrapper {
+      display: block;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      svg {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    height: 20px;
+    width: 20px;
+    background-color: $green;
+    padding: 0px 5px;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  &__product {
+    position: relative;
+    border: 2px solid $accentL;
+    box-shadow: 0px 0px 5px 0px $accentL;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  &__wrapper {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: $secondaryL;
+    padding: 15px;
+    width: 270px;
+    border-radius: 10px;
+    &.show {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__products {
+    margin-top: 20px;
+  }
+
+  &__product {
+    &-top {
+      display: flex;
+      align-items: center;
+    }
+    &-image {
+      width: 60px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &-info {
+      margin-left: 5px;
+    }
+
+    &-name {
+      font-size: 18px;
+    }
+
+    &-price {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 18px;
+      @include fMedium;
+      span {
+        @include fBold;
+      }
+    }
+
+    &-desc {
+      margin-top: 5px;
+    }
+    &-subtitle {
+      font-size: 18px;
+      @include fBold;
+    }
+
+    &-ingredients {
+      column-count: 2;
+      width: 150px;
+      margin-top: 5px;
+    }
+
+    &-ingredient {
+      width: max-content;
+    }
+
+    &-close {
+      top: 15px;
+      right: 15px;
+    }
+  }
+}
+.wishlist {
+  &__icon {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__count {
+  }
+
+  &__wrapper {
+  }
+
+  &__title {
+  }
+
+  &__products {
+  }
+
+  &__product {
+    &-image {
+    }
+
+    &-info {
+    }
+
+    &-name {
+    }
+
+    &-ingredients {
+    }
+
+    &-ingredient {
+    }
+
+    &-price {
+    }
+
+    &-remove {
+      right: 7px;
+      top: 7px;
+    }
+  }
+}
+.cart {
+  &__icon {
+    svg {
+      width: 26px;
+    }
+  }
+
+  &__count {
+  }
+
+  &__wrapper {
+  }
+
+  &__title {
+  }
+
+  &__products {
+  }
+
+  &__product {
+    &-image {
+    }
+
+    &-info {
+    }
+
+    &-name {
+    }
+
+    &-ingredients {
+    }
+
+    &-ingredient {
+    }
+
+    &-counting {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    &-add,
+    &-remove {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: 1px solid $coffee;
+      border-radius: 50%;
+      cursor: pointer;
+      will-change: transfrom;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(0.9);
+        transform-origin: center;
+      }
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $coffee;
+        pointer-events: none;
+      }
+      &::before {
+        width: 10px;
+        height: 2px;
+      }
+      &::after {
+        height: 10px;
+        width: 2px;
+      }
+    }
+
+    &-value {
+      display: flex;
+      width: 50px;
+      padding: 5px;
+      border-radius: 5px;
+      text-align: center;
+      border: 1px solid $coffee;
+      background-color: transparent;
+      margin: 0 5px;
+      @include fMedium;
+    }
+
+    &-remove {
+      &::after {
+        display: none;
+      }
+    }
+
+    &-add {
+      &::before {
+      }
+    }
+
+    &-price {
+    }
+  }
+
+  &__total {
+    font-size: 20px;
+    @include fSemiBold;
+    margin-top: 20px;
+    span {
+      @include fBold;
+    }
+  }
+}
