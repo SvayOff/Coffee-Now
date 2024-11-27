@@ -84,6 +84,34 @@
   }
 }
 
+.title {
+  font-size: 36px;
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+  }
+
+  &::before {
+    border-top: 2px solid $coffee;
+    border-left: 2px solid $coffee;
+    left: -5px;
+    top: -5px;
+  }
+
+  &::after {
+    border-bottom: 2px solid $coffee;
+    border-right: 2px solid $coffee;
+    right: -5px;
+    bottom: -5px;
+  }
+}
+
 .logo {
   font-size: 42px;
   display: flex;
