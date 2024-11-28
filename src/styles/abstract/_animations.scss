@@ -1,0 +1,17 @@
+@keyframes pulseHistoryDecor {
+  0% {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+  }
+  25% {
+    width: 6px;
+    height: 6px;
+    opacity: 0.2;
+  }
+  100% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+}

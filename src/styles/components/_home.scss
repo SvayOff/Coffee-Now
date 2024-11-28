@@ -193,3 +193,137 @@
     }
   }
 }
+
+// history
+.history {
+  &__inner {
+  }
+
+  &__title {
+  }
+
+  &__content {
+    position: relative;
+    padding-top: 50px;
+  }
+
+  &__poster {
+    position: absolute;
+    width: max-content;
+    z-index: -1;
+    &-first {
+      top: 100px;
+      left: -225px;
+      .history__poster-image:last-child {
+        right: 2px;
+        bottom: 8px;
+      }
+    }
+
+    &-second {
+      bottom: -25px;
+      right: -225px;
+      .history__poster-image:last-child {
+        left: 2px;
+        bottom: 8px;
+      }
+    }
+
+    &-image {
+      img {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      &:last-child {
+        position: absolute;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & + & {
+      margin-top: 20px;
+    }
+    &-first {
+    }
+    &-second {
+    }
+    &-third {
+    }
+
+    &:nth-child(even) {
+      .history__info {
+        margin-left: 20px;
+      }
+      .history__text {
+        padding-left: 40px;
+      }
+      .history__decor {
+        left: 0;
+      }
+    }
+
+    &:nth-child(odd) {
+      .history__info {
+        margin-right: 20px;
+        text-align: right;
+      }
+      .history__text {
+        padding-right: 40px;
+      }
+      .history__decor {
+        right: 0;
+      }
+    }
+  }
+
+  &__info {
+    max-width: 500px;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  &__text {
+    position: relative;
+    &:hover {
+      .history__decor {
+        &:before {
+          animation: pulseHistoryDecor 1s forwards;
+        }
+      }
+    }
+    & + & {
+      margin-top: 20px;
+    }
+  }
+  &__decor,
+  &__decor::before {
+    position: absolute;
+    border: 1px solid $coffee;
+    top: 50%;
+  }
+  &__decor {
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%) rotateZ(45deg);
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      will-change: auto;
+    }
+  }
+
+  &__image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
