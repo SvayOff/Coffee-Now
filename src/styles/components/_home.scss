@@ -197,6 +197,7 @@
 // history
 .history {
   &__inner {
+    padding: 0 0 100px;
   }
 
   &__title {
@@ -325,5 +326,17 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+}
+
+// paralax
+.paralax {
+  &__image {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
   }
 }
