@@ -113,6 +113,69 @@
     &-new {
     }
   }
+
+  &__link {
+    margin: 30px auto 0;
+  }
+}
+
+//buy-often
+.buy-often {
+  &__inner {
+    padding: 0 0 100px;
+  }
+
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__slider {
+    position: relative;
+    padding: 60px 70px 0;
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    &-image {
+    }
+
+    &-title {
+    }
+
+    &-desc {
+    }
+
+    &-ingredients {
+    }
+
+    &-ingredient {
+    }
+
+    &-bottom {
+    }
+
+    &-price {
+    }
+
+    &-buy {
+    }
+
+    &-new {
+    }
+
+    &-favorite {
+    }
+  }
+
+  &__link {
+    margin: 30px auto 0;
+  }
 }
 
 // details
