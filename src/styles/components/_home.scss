@@ -3,7 +3,7 @@
   &__inner {
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    padding: 80px 0 100px;
   }
 
   &__info {
@@ -75,7 +75,7 @@
 // novelty
 .novelty {
   &__inner {
-    padding: 100px 0;
+    padding: 0 0 100px;
   }
 
   &__title {
@@ -288,6 +288,9 @@
 
 // paralax
 .paralax {
+  &__inner {
+    padding: 0 0 100px;
+  }
   &__image {
     background-attachment: fixed;
     background-size: cover;
@@ -302,7 +305,7 @@
 // reviews
 .reviews {
   &__inner {
-    padding: 100px 0;
+    padding: 0 0 100px;
   }
 
   &__title {
