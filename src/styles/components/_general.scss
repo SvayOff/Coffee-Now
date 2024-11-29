@@ -129,6 +129,12 @@
   &__image {
     width: 40px;
     padding: 0 5px;
+    transition: transform 0.5s ease;
+  }
+  &:hover {
+    .logo__image {
+      transform: rotateZ(45deg);
+    }
   }
 }
 
@@ -345,10 +351,12 @@
     transform: translate(-50%, -50%);
   }
 }
+
 .arrow-prev {
   left: 0;
   transform: rotate(135deg);
 }
+
 .arrow-next {
   right: 0;
   transform: rotate(-45deg);

@@ -1,0 +1,79 @@
+// footer
+.footer {
+  background-color: $secondaryL;
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 50px 0 0;
+  }
+
+  &__logo {
+    &-image {
+    }
+  }
+
+  &__col {
+    font-size: 18px;
+    &-title {
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+
+    &-list {
+    }
+
+    &-item {
+      & + & {
+        margin-top: 10px;
+      }
+    }
+
+    &-link {
+      color: $coffee;
+      transition: all 0.5s ease;
+      &:hover {
+        transform: translateX(10px);
+        opacity: 0.8;
+      }
+    }
+
+    &-phone {
+      color: $coffee;
+      &:hover {
+        @include fSemiBold;
+      }
+    }
+
+    &-location {
+      margin-top: 15px;
+      span {
+        display: block;
+      }
+    }
+
+    &-schedule {
+      margin-top: 15px;
+    }
+
+    &-rowtime {
+      & + & {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &__socials {
+    margin-top: 15px;
+    &-item {
+    }
+
+    &-link {
+    }
+  }
+
+  &__copyright {
+    font-size: 18px;
+    padding-bottom: 30px;
+  }
+}

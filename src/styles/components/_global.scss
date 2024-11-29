@@ -9,6 +9,14 @@
   box-sizing: inherit;
 }
 
+::-moz-selection {
+  background-color: $coffee;
+}
+
+::selection {
+  background-color: $accentL;
+}
+
 html {
   box-sizing: border-box;
   overflow-x: hidden;
@@ -41,6 +49,15 @@ a {
 
 img {
   border-style: none;
+}
+
+img,
+svg,
+path,
+picture {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 ul,
