@@ -306,3 +306,50 @@
     }
   }
 }
+
+.btn {
+  background-color: transparent;
+  color: $coffee;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 21px;
+  @include fSemiBold;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+  border: 1px solid $coffee;
+  &:hover {
+    background-color: $secondaryL;
+  }
+}
+
+.arrow-btn {
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid $coffee;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  transition: scale 0.3s ease;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+
+  &:hover {
+    scale: 1.1;
+  }
+  &::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.arrow-prev {
+  left: 0;
+  transform: rotate(135deg);
+}
+.arrow-next {
+  right: 0;
+  transform: rotate(-45deg);
+}

@@ -17,7 +17,7 @@
 
 		<div class="content">
 
-			<header class="header">
+			<header id="header" class="header">
 				<div class="container">
 					<div class="header__inner">
 						<div class="header__top">
@@ -184,7 +184,7 @@
 				</div>
 			</header>
 
-			<section class="target">
+			<section id="target" class="target">
 				<div class="container">
 					<div class="target__inner">
 						<div class="target__info">
@@ -200,7 +200,7 @@
 								Відкрийте для себе спокій у нашому місці,
 								тут вечори для вас стануть ідеальним відпочинком і насиченими смаками.
 							</p>
-							<a class="target__link" href="#">
+							<a class="target__link btn" href="#" target="_blank">
 								Переглянути Асортимент
 							</a>
 							<p class="target__discount">
@@ -268,7 +268,7 @@
 				</div>
 			</section>
 
-			<section class="novelty">
+			<section id="novelty" class="novelty">
 				<div class="container">
 					<div class="novelty__inner">
 						<h2 class="novelty__title title">
@@ -278,9 +278,9 @@
 							Виберіть одну з наших новинок. Вони вже чекають щоб ви їх спробували.
 						</p>
 						<div class="novelty__slider">
-							<button class="novelty__slider-arrow arrow-prev arrow" type="button">
+							<button class="novelty__slider-arrow arrow-btn arrow-prev arrow" type="button">
 							</button>
-							<div class="novelty__slider-wrapper">
+							<div class="novelty__slider-inner">
 								<article class="novelty__item product__item">
 									<div class="novelty__item-image product__item-image">
 										<img src="/images/coffee/coffee-7.webp" alt="coffee">
@@ -423,14 +423,14 @@
 									</button>
 								</article>
 							</div>
-							<button class="novelty__slider-arrow arrow-next arrow" type="button">
+							<button class="novelty__slider-arrow arrow-btn arrow-next arrow" type="button">
 							</button>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="details">
+			<section id="details" class="details">
 				<div class="container">
 					<div class="details__inner">
 						<h2 class="details__title title">
@@ -477,7 +477,7 @@
 				</div>
 			</section>
 
-			<section class="history">
+			<section id="history" class="history">
 				<div class="container">
 					<div class="history__inner">
 						<h2 class="history__title title">
@@ -555,102 +555,109 @@
 				<div class="paralax__image" style="background-image: url('/images/general/paralax.webp');">
 				</div>
 			</section>
-			<!--
-			<section class="reviews">
+
+			<section id="reviews" class="reviews">
 				<div class="container">
 					<div class="reviews__inner">
 						<h2 class="reviews__title title">
 							Відгуки
 						</h2>
+						<p class="reviews__description description">
+							Залиште ваш відгук про нас, так ми отримаємо об'єктивну інформацію про нашу роботу.
+						</p>
 						<div class="reviews__slider">
-							<article class="reviews__slide">
-								<div class="reviews__slide-top">
-									<div class="reviews__slide-image">
-										<img src="/images/reviews/man-3.webp" alt="person">
+							<button class="reviews__slider-arrow arrow-btn arrow-prev arrow" type="button"></button>
+							<div class="reviews__slider-inner">
+								<article class="reviews__slide">
+									<div class="reviews__slide-top">
+										<div class="reviews__slide-image">
+											<img src="/images/reviews/man-3.webp" alt="person">
+										</div>
+										<div class="reviews__slide-info">
+											<h4 class="reviews__slide-name">
+												Олег Становський
+											</h4>
+											<div class="reviews__slide-rate"></div>
+										</div>
 									</div>
-									<div class="reviews__slide-info">
-										<h4 class="reviews__slide-name">
-											Олег Становський
-										</h4>
-										<div class="reviews__slide-rate"></div>
+									<p class="reviews__slide-text text">
+										Дякую за смачне Еспресо. Часто замовляю.
+									</p>
+								</article>
+								<article class="reviews__slide">
+									<div class="reviews__slide-top">
+										<div class="reviews__slide-image">
+											<img src="/images/reviews/woman-2.webp" alt="person">
+										</div>
+										<div class="reviews__slide-info">
+											<h4 class="reviews__slide-name">
+												Анастасія Бламар
+											</h4>
+											<div class="reviews__slide-rate"></div>
+										</div>
 									</div>
-								</div>
-								<p class="reviews__slide-text text">
-									Дякую за смачне Еспресо. Часто замовляю.
-								</p>
-							</article>
-							<article class="reviews__slide">
-								<div class="reviews__slide-top">
-									<div class="reviews__slide-image">
-										<img src="/images/reviews/woman-2.webp" alt="person">
+									<p class="reviews__slide-text text">
+										Чудовий заклад, відвідую щодня, чемний та ввічливий персонал.
+									</p>
+								</article>
+								<article class="reviews__slide">
+									<div class="reviews__slide-top">
+										<div class="reviews__slide-image">
+											<img src="/images/reviews/man-2.webp" alt="person">
+										</div>
+										<div class="reviews__slide-info">
+											<h4 class="reviews__slide-name">
+												Валерій Красовський
+											</h4>
+											<div class="reviews__slide-rate"></div>
+										</div>
 									</div>
-									<div class="reviews__slide-info">
-										<h4 class="reviews__slide-name">
-											Анастасія Бламар
-										</h4>
-										<div class="reviews__slide-rate"></div>
+									<p class="reviews__slide-text text">
+										Бував у різних кав'ярнях, але це краща. Дуже привітні баристи.
+									</p>
+								</article>
+								<article class="reviews__slide">
+									<div class="reviews__slide-top">
+										<div class="reviews__slide-image">
+											<img src="/images/reviews/man-1.webp" alt="person">
+										</div>
+										<div class="reviews__slide-info">
+											<h4 class="reviews__slide-name">
+												Олексій Сташняк
+											</h4>
+											<div class="reviews__slide-rate"></div>
+										</div>
 									</div>
-								</div>
-								<p class="reviews__slide-text text">
-									Чудовий заклад, відвідую щодня, чемний та ввічливий персонал.
-								</p>
-							</article>
-							<article class="reviews__slide">
-								<div class="reviews__slide-top">
-									<div class="reviews__slide-image">
-										<img src="/images/reviews/man-2.webp" alt="person">
+									<p class="reviews__slide-text text">
+										Нажаль не в Києві, щоб побувати в закладі, але доставка сайт - супер.
+									</p>
+								</article>
+								<article class="reviews__slide">
+									<div class="reviews__slide-top">
+										<div class="reviews__slide-image">
+											<img src="/images/reviews/woman-1.webp" alt="person">
+										</div>
+										<div class="reviews__slide-info">
+											<h4 class="reviews__slide-name">
+												Ольга Лис
+											</h4>
+											<div class="reviews__slide-rate"></div>
+										</div>
 									</div>
-									<div class="reviews__slide-info">
-										<h4 class="reviews__slide-name">
-											Валерій Красовський
-										</h4>
-										<div class="reviews__slide-rate"></div>
-									</div>
-								</div>
-								<p class="reviews__slide-text text">
-									Бував у різних кав'ярнях, але це краща. Дуже привітні баристи.
-								</p>
-							</article>
-							<article class="reviews__slide">
-								<div class="reviews__slide-top">
-									<div class="reviews__slide-image">
-										<img src="/images/reviews/man-1.webp" alt="person">
-									</div>
-									<div class="reviews__slide-info">
-										<h4 class="reviews__slide-name">
-											Олексій Сташняк
-										</h4>
-										<div class="reviews__slide-rate"></div>
-									</div>
-								</div>
-								<p class="reviews__slide-text text">
-									Нажаль не в Києві, щоб побувати в закладі, але доставка сайт - супер.
-								</p>
-							</article>
-							<article class="reviews__slide">
-								<div class="reviews__slide-top">
-									<div class="reviews__slide-image">
-										<img src="/images/reviews/woman-1.webp" alt="person">
-									</div>
-									<div class="reviews__slide-info">
-										<h4 class="reviews__slide-name">
-											Ольга Лис
-										</h4>
-										<div class="reviews__slide-rate"></div>
-									</div>
-								</div>
-								<p class="reviews__slide-text text">
-									Величезний вибір кавових напоїв та смачненького. Дякую.
-								</p>
-							</article>
+									<p class="reviews__slide-text text">
+										Величезний вибір кавових напоїв та смачненького. Дякую.
+									</p>
+								</article>
+							</div>
+							<button class="reviews__slider-arrow arrow-btn arrow-next arrow" type="button"></button>
 						</div>
-						<button class="reviews__btn">
+						<button class="reviews__btn btn" type="button">
 							Залишити відгук
 						</button>
 					</div>
 				</div>
 			</section>
-
+			<!--
 			<section class="faq">
 				<div class="container">
 					<div class="faq__inner">
