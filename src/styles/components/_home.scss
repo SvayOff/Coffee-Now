@@ -454,6 +454,14 @@
         grid-template-rows: 1fr;
         padding: 20px;
       }
+      .faq__item-button {
+        &::before,
+        &::after {
+          transform: translateY(-50%) rotateZ(45deg);
+        }
+        &::before {
+        }
+      }
     }
     &-title {
       border: 1px solid $coffee;
@@ -476,6 +484,7 @@
         top: 50%;
         transform: translateY(-50%);
         pointer-events: none;
+        transition: transform 0.5s ease;
       }
       &::before {
         width: 2px;
