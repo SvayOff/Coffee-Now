@@ -19,11 +19,23 @@
 				<div class="container">
 					<div class="login__inner">
 						<div class="login__form-wrapper form__wrapper">
-							<h2 class="login__title title form__title">Вхід</h2>
+							<h2 class="login__title title form__title">Реєстрація</h2>
 							<p class="login__decription description form__description">
-								Увійдіть в свій обліковий запис, щоб отримати більше можливостей.
+								Зареєструйте свій обліковий запис, щоб отримати більше можливостей.
 							</p>
 							<form class="login__form form" action="#">
+								<div class="login__form-row form__row">
+									<input class="login__form-input form__input" type="text" required>
+									<label class="login__form-label form__label" for="">Ім'я</label>
+								</div>
+								<div class="login__form-row form__row">
+									<input class="login__form-input form__input" type="text" required>
+									<label class="login__form-label form__label" for="">Прізвище</label>
+								</div>
+								<div class="login__form-row form__row">
+									<input class="login__form-input form__input" type="text" required>
+									<label class="login__form-label form__label" for="">Номер телефону</label>
+								</div>
 								<div class="login__form-row form__row">
 									<span class="login__form-icon form__icon form__icon-email">
 										<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +47,7 @@
 										</svg>
 									</span>
 									<input class="login__form-input form__input" type="text" required>
-									<label class="login__form-label form__label" for="">Email</label>
+									<label class="login__form-label form__label" for="">Електронна адреса</label>
 								</div>
 								<div class="login__form-row form__row">
 									<button class="login__form-icon form__icon form__icon-password hidden" type="button">
@@ -52,17 +64,9 @@
 										<span></span>
 									</button>
 									<input class="login__form-input form__input" type="password" required>
-									<label class="login__form-label form__label" for="">Password</label>
+									<label class="login__form-label form__label" for="">Пароль</label>
 								</div>
-								<div class="login__form-additionally form__additionally">
-									<label class="login__form-remember form__remember">
-										<input class="login__form-checkbox form__checkbox" type="checkbox">
-										Запам'ятати мене
-									</label>
-									<button class="login__form-forgot form__forgot" type="button">
-										Забули пароль?
-									</button>
-								</div>
+
 								<div class="login__form-other form__other">
 									або
 									<button class="login__form-auth form__auth form__google btn" type="button">
@@ -91,13 +95,13 @@
 									</button>
 								</div>
 								<button class="login__form-btn form__btn btn" type="submit">
-									Увійти
+									Зареєструватися
 								</button>
 								<div class="login__form-registration form__registration">
 									<p class="login__form-text form__text">
-										Не маєте облікового запису?
-										<a class="login__form-link form__link" href="/registration.html">
-											Зареєструватися
+										Вже маєте обліковий запис?
+										<a class="login__form-link form__link" href="/login.html">
+											Увійти
 										</a>
 									</p>
 								</div>
@@ -108,34 +112,39 @@
 			</section>
 		</div>
 
-		<div class="popup__recovery popup">
-			<div class="popup__recovery-inner popup__inner">
-				<div class="popup__recovery-content popup__content">
-					<h2 class="popup__recovery-title title">
-						Відновлення паролю
-					</h2>
-					<p class="popup__recovery-description description">
-						Введіть ваш E-mail для відновлення паролю.
+		<div class="popup__fulfilled popup">
+			<div class="popup__fulfilled-inner popup__inner">
+				<div class="popup__fulfilled-content popup__content">
+					<div class="popup__fulfilled-image">
+						<svg height="60" viewBox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg">
+							<path class="cls-1"
+								d="M800,510a30,30,0,1,1,30-30A30,30,0,0,1,800,510Zm-16.986-23.235a3.484,3.484,0,0,1,0-4.9l1.766-1.756a3.185,3.185,0,0,1,4.574.051l3.12,3.237a1.592,1.592,0,0,0,2.311,0l15.9-16.39a3.187,3.187,0,0,1,4.6-.027L817,468.714a3.482,3.482,0,0,1,0,4.846l-21.109,21.451a3.185,3.185,0,0,1-4.552.03Z"
+								id="check" transform="translate(-770 -450)" />
+						</svg>
+					</div>
+					<p class="popup__fulfilled-description description">
+						Дякуємо, ваш обліковий запис зареєстровано. <br>
+						Дані для входу:
 					</p>
-					<form class="popup__recovery-form form" action="">
-						<div class="popup__recovery-row form__row">
-							<span class="popup__recovery-icon form__icon form__icon-email">
-								<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-									<title />
-									<g data-name="8-Email" id="_8-Email">
-										<path
-											d="M45,7H3a3,3,0,0,0-3,3V38a3,3,0,0,0,3,3H45a3,3,0,0,0,3-3V10A3,3,0,0,0,45,7Zm-.64,2L24,24.74,3.64,9ZM2,37.59V10.26L17.41,22.17ZM3.41,39,19,23.41l4.38,3.39a1,1,0,0,0,1.22,0L29,23.41,44.59,39ZM46,37.59,30.59,22.17,46,10.26Z" />
-									</g>
-								</svg>
-							</span>
-							<input class="popup__recovery-input form__input" type="text" required>
-							<label class="popup__recovery-label form__label" for="">Email</label>
-						</div>
-						<button class="popup__recovery-btn btn form__btn" type="submit">
-							Відправити
-						</button>
-					</form>
-					<button class="popup__recovery-close close popup__close"></button>
+					<ul class="popup__fulfilled-details">
+						<li class="popup__fulfilled-row">
+							<h4 class="popup__fulfilled-subtitle">
+								Електронна адреса:
+							</h4>
+							<p class="popup__fulfilled-text">
+								coffeenow@gmail.com
+							</p>
+						</li>
+						<li class="popup__fulfilled-row">
+							<h4 class="popup__fulfilled-subtitle">
+								Пароль:
+							</h4>
+							<p class="popup__fulfilled-text">
+								hGjkTo10Ih_
+							</p>
+						</li>
+					</ul>
+					<button class="popup__fulfilled-close close popup__close"></button>
 				</div>
 			</div>
 		</div>
