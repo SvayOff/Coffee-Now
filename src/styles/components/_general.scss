@@ -662,6 +662,216 @@
   }
 }
 
+.form {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid $coffee;
+    padding: 50px 40px 40px;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+
+  &__title {
+  }
+
+  &__description {
+    margin-top: 30px;
+  }
+
+  &__row {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid $coffee;
+    margin-top: 30px;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    svg {
+      width: 20px;
+      fill: $coffee;
+      pointer-events: none;
+    }
+    path {
+      stroke: $coffee;
+    }
+    &-email {
+    }
+    &-password {
+      background-color: transparent;
+      border: none;
+      height: auto;
+      line-height: 0;
+      cursor: pointer;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%) rotate(45deg);
+        height: 100%;
+        width: 2px;
+        background-color: $coffee;
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      &.hidden {
+        &::before {
+          opacity: 1;
+        }
+      }
+      svg {
+        width: 24px;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    @include fMedium;
+    padding: 0 35px 0 5px;
+    &:focus ~ .form__label,
+    &:valid ~ .form__label {
+      top: -5px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    font-size: 18px;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    @include fMedium;
+    pointer-events: none;
+    transition: top 0.5s ease;
+  }
+
+  &__additionally {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  &__remember {
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    accent-color: $coffee;
+    margin-right: 3px;
+  }
+
+  &__forgot {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__other {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  &__auth {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    gap: 10px;
+    &:hover {
+      background: $coffee;
+      color: $bgL;
+    }
+    svg {
+      width: 20px;
+    }
+  }
+
+  &__btn {
+    margin-top: 20px;
+    width: 100%;
+    background-color: $coffee;
+    color: $bgL;
+    &:hover {
+      background-color: transparent;
+      color: $coffee;
+    }
+  }
+
+  &__registration {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  &__text {
+  }
+
+  &__link {
+    color: $coffee;
+    @include fMedium;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: $bgL;
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 0 30px;
+  }
+  &__content {
+    position: relative;
+    border: 1px solid $coffee;
+    padding: 50px 40px 40px;
+    border-radius: 20px;
+  }
+  &.show {
+    display: block;
+  }
+  .close {
+    right: 20px;
+    top: 20px;
+  }
+}
+
 section:hover {
   .title {
     &::before,
