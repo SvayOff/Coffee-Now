@@ -35,9 +35,6 @@
       }
       &:hover {
         .header__navigation-sublist {
-          // height: auto;
-          // opacity: 1;
-          // visibility: visible;
           padding: 15px;
           grid-template-rows: 1fr;
         }
@@ -68,6 +65,7 @@
       width: max-content;
       transition: grid-template-rows 0.5s ease, padding 0.5s ease;
       box-shadow: 0 0 5px 0px rgba($color: $coffee, $alpha: 0.2);
+      z-index: 1;
       &::before {
         content: '';
         position: absolute;
