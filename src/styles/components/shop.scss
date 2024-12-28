@@ -1,0 +1,252 @@
+.shop {
+  &__inner {
+    display: flex;
+    gap: 30px;
+    padding: 60px 0 100px;
+  }
+
+  &__sidebar {
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__search {
+    position: relative;
+    margin: 15px 0;
+    width: 100%;
+    &-row {
+    }
+
+    &-input {
+      width: 100%;
+      border-radius: 20px;
+      height: 40px;
+      border: 1px solid $coffee;
+      font-size: 18px;
+      padding: 0 20px 0 10px;
+      outline: none;
+      background-color: $accentL;
+      color: $coffee;
+      &::placeholder {
+        color: $coffee;
+      }
+      &:focus {
+        box-shadow: 0 0 5px 0px rgba($color: $coffee, $alpha: 0.2);
+      }
+    }
+
+    &-btn {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      path {
+        fill: $coffee;
+      }
+    }
+
+    &-list {
+    }
+
+    &-item {
+    }
+  }
+
+  &__filters {
+  }
+
+  &__filter {
+    & + & {
+      margin-top: 15px;
+    }
+    &-categories {
+    }
+
+    &-subtitle {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    &-content {
+    }
+
+    &-row {
+      & + & {
+        margin-top: 2px;
+      }
+    }
+
+    &-checkbox {
+      accent-color: $coffee;
+      cursor: pointer;
+    }
+
+    &-label {
+      cursor: pointer;
+      font-size: 18px;
+      margin-left: 2px;
+    }
+
+    &-sort {
+      position: relative;
+      width: max-content;
+      button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+      }
+      &.show {
+        .shop__filter-list {
+          grid-template-rows: 1fr;
+          padding: 10px 15px;
+        }
+      }
+    }
+
+    &-box {
+      position: relative;
+    }
+
+    &-list {
+      display: grid;
+      grid-template-rows: 0fr;
+      position: absolute;
+      background-color: $secondaryL;
+      width: max-content;
+      padding: 0 15px;
+      left: 0;
+      top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px 0px rgba($color: $coffee, $alpha: 0.2);
+      transition: grid-template-rows 0.5s ease, padding 0.5s ease;
+    }
+
+    &-inner {
+      overflow: hidden;
+    }
+
+    &-criterion {
+      button {
+        position: relative;
+        font-size: 18px;
+        padding-right: 15px;
+        color: $coffee;
+      }
+    }
+
+    &-item {
+      cursor: pointer;
+      font-size: 18px;
+      &:hover {
+        opacity: 0.7;
+      }
+      & + & {
+        margin-top: 5px;
+      }
+    }
+
+    &-btn {
+      width: max-content;
+    }
+
+    &-price {
+    }
+
+    &-values {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &-value {
+      font-size: 18px;
+    }
+
+    &-input {
+      text-align: center;
+      width: 60px;
+      border-radius: 20px;
+      height: 40px;
+      border: 1px solid $coffee;
+      font-size: 18px;
+      padding: 5px;
+      outline: none;
+      color: $coffee;
+      background-color: $accentL;
+      &::placeholder {
+        color: $coffee;
+      }
+      &:focus {
+        box-shadow: 0 0 5px 0px rgba($color: $coffee, $alpha: 0.2);
+      }
+    }
+
+    &-range {
+    }
+  }
+
+  &__content {
+  }
+
+  &__products {
+  }
+
+  &__item {
+    &-image {
+    }
+
+    &-title {
+    }
+
+    &-desc {
+    }
+
+    &-ingredients {
+    }
+
+    &-ingredient {
+    }
+
+    &-bottom {
+    }
+
+    &-price {
+    }
+
+    &-buy {
+    }
+
+    &-new {
+    }
+
+    &-favorite {
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    &-arrow {
+      position: relative;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+    }
+
+    &-item {
+    }
+
+    &-btn {
+    }
+  }
+}

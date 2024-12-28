@@ -894,3 +894,7 @@ section:hover {
     }
   }
 }
+
+input[type='search']::-webkit-search-cancel-button {
+  display: none;
+}
