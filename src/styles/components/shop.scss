@@ -1,11 +1,12 @@
 .shop {
   &__inner {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     padding: 60px 0 100px;
   }
 
   &__sidebar {
+    min-width: 230px;
   }
 
   &__title {
@@ -197,6 +198,9 @@
   }
 
   &__products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 
   &__item {
@@ -234,6 +238,15 @@
   &__pagination {
     display: flex;
     align-items: center;
+    margin-top: 50px;
+    button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 1px solid $coffee;
+      background-color: transparent;
+    }
     &-arrow {
       position: relative;
     }
@@ -244,9 +257,26 @@
     }
 
     &-item {
+      font-size: 18px;
+      margin: 0 5px;
+      & + & {
+        margin-left: 0;
+      }
+      &.active {
+        .shop__pagination-btn {
+          background-color: $coffee;
+          color: $accentL;
+        }
+      }
     }
 
     &-btn {
+      color: $coffee;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      &:hover {
+        background-color: $coffee;
+        color: $accentL;
+      }
     }
   }
 }
