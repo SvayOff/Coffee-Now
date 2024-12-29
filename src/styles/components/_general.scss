@@ -22,6 +22,7 @@
   background-color: transparent;
   border: none;
   transition: transform 0.2s ease;
+  will-change: transform;
   &::before,
   &::after {
     content: '';
@@ -236,12 +237,16 @@
       margin-bottom: 15px;
     }
 
+    &-subtitle {
+      font-size: 18px;
+    }
+
     &-ingredients {
       columns: 2;
       width: max-content;
-      margin: 0 auto;
+      margin: 5px auto 0;
       list-style: circle;
-      margin-bottom: 15px;
+      gap: 25px;
       @include fMedium;
     }
 

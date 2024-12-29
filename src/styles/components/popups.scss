@@ -54,3 +54,56 @@
     }
   }
 }
+
+.popup-product {
+  background-color: rgba($color: $bgL, $alpha: 0.9);
+  // backdrop-filter: blur(1px);
+  &__inner {
+  }
+
+  &__content {
+    width: max-content;
+    padding: 30px 20px 20px;
+    background-color: $accentL;
+  }
+
+  &__item {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    &-image {
+    }
+
+    &-title {
+    }
+
+    &-desc {
+    }
+
+    &-bottom {
+    }
+
+    &-price {
+    }
+
+    &-buy {
+    }
+
+    &-new {
+    }
+
+    &-favorite,
+    &-more {
+      right: 0;
+    }
+
+    &-favorite {
+    }
+
+    &-more {
+    }
+  }
+
+  &__close {
+  }
+}
