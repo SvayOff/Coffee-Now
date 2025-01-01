@@ -81,13 +81,23 @@
   &__title {
   }
 
-  &__slider {
+  &__box {
     position: relative;
-    padding: 70px 70px 0;
-    &-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
+  }
+
+  &__slider {
+    width: 100%;
+    max-width: 1140px;
+    &-wrapper {
+      padding: 70px 0 0;
+    }
+
+    &-arrow {
+    }
+
+    &-arrow_prev {
+    }
+    &-arrow_next {
     }
   }
 
@@ -131,13 +141,15 @@
   &__description {
   }
 
-  &__slider {
+  &__box {
     position: relative;
-    padding: 60px 70px 0;
-    &-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
+  }
+
+  &__slider {
+    width: 100%;
+    max-width: 1140px;
+    &-wrapper {
+      padding: 50px 0 0;
     }
   }
 
