@@ -207,6 +207,55 @@
   }
 }
 
+.button__to-top {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 60px;
+  border: 2px solid $coffee;
+  border-radius: 50%;
+  background-color: rgba($color: $secondaryL, $alpha: 0.8);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 1s infinite alternate;
+  box-shadow: 0 0 5px 0 rgba($color: $coffee, $alpha: 0.2);
+  &:hover {
+    background-color: $coffee;
+    &::before,
+    &::after {
+      border-color: $secondaryL;
+    }
+  }
+  &.show {
+    display: block;
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border: 2px solid $coffee;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0 2px 0 0;
+    transform: rotateZ(-45deg);
+    transition: border-color 0.3s ease;
+  }
+  &::before {
+    width: 20px;
+    height: 20px;
+    left: 13px;
+    top: 15px;
+  }
+  &::after {
+    width: 15px;
+    height: 15px;
+    left: 16px;
+    top: 24px;
+  }
+}
+
 .product {
   &__item {
     display: flex;

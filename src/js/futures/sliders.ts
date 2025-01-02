@@ -2,7 +2,7 @@ import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 import 'swiper/css/bundle';
 
-document.addEventListener('DOMContentLoaded', () => {
+export const showSliders = () => {
 	const noveltySlider = new Swiper(".novelty__slider", {
 		modules: [Navigation],
 		spaceBetween: 30,
@@ -24,5 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			prevEl: '.buy-often__slider-arrow_prev'
 		}
 	});
-});
+
+	const reviewsSlider = new Swiper('.reviews__slider', {
+		modules: [Navigation],
+		spaceBetween: 30,
+		slidesPerView: 'auto',
+		loop: true,
+		navigation: {
+			nextEl: '.reviews__slider-arrow_next',
+			prevEl: '.reviews__slider-arrow_prev'
+		}
+	});
+};
+
+
 
