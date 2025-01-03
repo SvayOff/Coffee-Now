@@ -1,18 +1,18 @@
-const addFooterToHTML = function () {
-	const wrapper = document.querySelector('.wrapper');
+const addFooterToHTML = function (): void {
+	const wrapper = document.querySelector('.wrapper') as HTMLDivElement;
 
 	fetch('footer.html')
-		.then(res => {
+		.then((res: Response) => {
 			if (!res.ok) {
 				throw new Error(`HTTP error! Status: ${res.status}`);
 			}
 
 			return res.text();
 		})
-		.then(footerHTML => {
-			wrapper?.insertAdjacentHTML('beforeend', footerHTML);
+		.then((footerHTML: string) => {
+			wrapper.insertAdjacentHTML('beforeend', footerHTML);
 		})
-		.catch(error => {
+		.catch((error: unknown) => {
 			console.error('Помилка  завантаження footer.html', error);
 		});
 }

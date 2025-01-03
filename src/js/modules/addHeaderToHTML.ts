@@ -1,18 +1,18 @@
-const addHeaderToHTML = function () {
-	const content = document.querySelector('.content');
+const addHeaderToHTML = function (): void {
+	const content = document.querySelector('.content') as HTMLDivElement;
 
 	fetch('header.html')
-		.then(res => {
+		.then((res: Response) => {
 			if (!res.ok) {
 				throw new Error(`HTTP error! Status: ${res.status}`);
 			}
 
 			return res.text();
 		})
-		.then(headerHTML => {
+		.then((headerHTML: string) => {
 			content?.insertAdjacentHTML('afterbegin', headerHTML);
 		})
-		.catch(error => {
+		.catch((error: unknown) => {
 			console.error('Помилка завантаження header.html', error)
 		});
 }
