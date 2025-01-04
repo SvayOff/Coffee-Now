@@ -3,6 +3,7 @@ import addFooterToHTML from "./modules/addFooterToHTML";
 import addHeaderToHTML from "./modules/addHeaderToHTML";
 import { showSliders } from "./futures/sliders";
 import { btnToTop } from "./modules/btnToTop";
+import { accordion } from './modules/accordion';
 
 document.addEventListener("DOMContentLoaded", () => {
 	addHeaderToHTML();
@@ -11,5 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	showSliders();
 
 	btnToTop();
+
+	accordion('faq');
 });
 

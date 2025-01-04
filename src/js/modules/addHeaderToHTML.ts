@@ -10,7 +10,7 @@ const addHeaderToHTML = function (): void {
 			return res.text();
 		})
 		.then((headerHTML: string) => {
-			content?.insertAdjacentHTML('afterbegin', headerHTML);
+			content.insertAdjacentHTML('afterbegin', headerHTML);
 		})
 		.catch((error: unknown) => {
 			console.error('Помилка завантаження header.html', error)
