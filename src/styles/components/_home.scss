@@ -75,6 +75,7 @@
 // novelty
 .novelty {
   &__inner {
+    position: relative;
     padding: 0 0 100px;
   }
 
@@ -127,11 +128,18 @@
   &__link {
     margin: 30px auto 0;
   }
+
+  &__decor {
+    width: 800px;
+    left: -650px;
+    top: 20px;
+  }
 }
 
 //buy-often
 .buy-often {
   &__inner {
+    position: relative;
     padding: 0 0 100px;
   }
 
@@ -193,6 +201,7 @@
 // details
 .details {
   &__inner {
+    position: relative;
     padding: 0 0 100px;
   }
 
@@ -222,6 +231,14 @@
     &-title {
       margin-top: 10px;
       font-size: 18px;
+    }
+  }
+  &__decor {
+    width: 800px;
+    right: -500px;
+    bottom: -200px;
+    &-image {
+      transform: rotateZ(-40deg);
     }
   }
 }
@@ -445,6 +462,7 @@
 // faq
 .faq {
   &__inner {
+    position: relative;
     padding-bottom: 100px;
   }
 
@@ -523,6 +541,20 @@
       overflow: hidden;
       font-size: 18px;
       color: $coffee;
+    }
+  }
+  &__decor {
+    width: 800px;
+    &-image {
+    }
+    &-first {
+      left: -500px;
+      top: -250px;
+      transform: scaleX(-1);
+    }
+    &-second {
+      right: -500px;
+      bottom: -150px;
     }
   }
 }

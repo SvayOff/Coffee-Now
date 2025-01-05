@@ -755,6 +755,17 @@
   }
 }
 
+.decor-coffee {
+  position: absolute;
+  z-index: -1;
+  &__image {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 .form {
   &__wrapper {
     display: flex;
