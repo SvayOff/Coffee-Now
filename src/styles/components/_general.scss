@@ -330,9 +330,7 @@
     }
 
     &-buy {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      position: relative;
       padding: 5px;
       width: 40px;
       height: 40px;
@@ -340,9 +338,15 @@
       border: 1px solid $coffee;
       border-radius: 50%;
       cursor: pointer;
+      overflow: hidden;
       svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         width: 20px;
-        transition: transform 0.7s ease;
+        transition: transform 0.7s ease, opacity 0.7s ease;
+        pointer-events: none;
       }
       path,
       circle {
@@ -350,7 +354,7 @@
       }
       &:hover {
         svg {
-          transform: translateX(-3px);
+          transform: translate(-60%, -50%);
         }
       }
     }
@@ -358,6 +362,23 @@
     &.new {
       .product__item-new {
         display: block;
+      }
+    }
+
+    &.added-to-cart {
+      .product__item-buy {
+        svg {
+          transform: translate(150%, -50%) scale(0.6);
+          opacity: 0;
+        }
+      }
+    }
+    &.cart-return {
+      .product__item-buy {
+        svg {
+          transform: translate(-150%, -50%);
+          opacity: 0;
+        }
       }
     }
 
@@ -397,6 +418,7 @@
         width: 16px;
         height: 16px;
         transition: transform 0.5s ease;
+        pointer-events: none;
       }
       path {
         fill: $coffee;

@@ -1,7 +1,8 @@
 import '../styles/style.scss';
 import addFooterToHTML from "./modules/addFooterToHTML";
 import addHeaderToHTML from "./modules/addHeaderToHTML";
-import { showSliders } from "./futures/sliders";
+import productControle from "./modules/products/products";
+import showSliders from "./modules/sliders/sliders";
 import { btnToTop } from "./modules/btnToTop";
 import { accordion } from './modules/accordion';
 
@@ -14,5 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	btnToTop();
 
 	accordion('faq');
+
+	productControle()
 });
 

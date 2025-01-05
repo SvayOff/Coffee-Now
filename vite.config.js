@@ -75,11 +75,12 @@ export default defineConfig(() => {
 								overrides: {
 									cleanupNumericValues: false,
 									removeViewBox: false,
+									cleanupIDs: {
+										minify: false,
+										remove: false,
+									},
 								},
-								cleanupIDs: {
-									minify: false,
-									remove: false,
-								},
+
 								convertPathData: false,
 							},
 						},

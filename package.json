@@ -22,6 +22,7 @@
     "vite-plugin-image-optimizer": "^1.1.8"
   },
   "dependencies": {
+    "@types/swiper": "^6.0.0",
     "swiper": "^11.1.15"
   }
 }
