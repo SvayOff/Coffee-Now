@@ -152,6 +152,10 @@
     font-size: 18px;
     cursor: pointer;
   }
+
+	&__btn{
+		cursor: pointer;
+	}
   &.show {
     .lang__list {
       grid-template-rows: 1fr;

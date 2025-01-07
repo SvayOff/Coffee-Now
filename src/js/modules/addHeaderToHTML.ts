@@ -1,20 +1,18 @@
-const addHeaderToHTML = function (): void {
+const addHeaderToHTML = async function (): Promise<void> {
 	const content = document.querySelector('.content') as HTMLDivElement;
 
-	fetch('header.html')
-		.then((res: Response) => {
-			if (!res.ok) {
-				throw new Error(`HTTP error! Status: ${res.status}`);
-			}
+	try {
+		const res = await fetch('header.html');
 
-			return res.text();
-		})
-		.then((headerHTML: string) => {
-			content.insertAdjacentHTML('afterbegin', headerHTML);
-		})
-		.catch((error: unknown) => {
-			console.error('Помилка завантаження header.html', error)
-		});
+		if (!res.ok) {
+			throw new Error(`HTTP error! Status: ${res.status}`);
+		}
+
+		const headerHTML = await res.text();
+		content.insertAdjacentHTML('afterbegin', headerHTML);
+	} catch (error: unknown) {
+		console.error('Помилка завантаження header.html', error);
+	}
 }
 
 export default addHeaderToHTML;

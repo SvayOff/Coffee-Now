@@ -5,9 +5,10 @@ import productControle from "./modules/products/products";
 import showSliders from "./modules/sliders/sliders";
 import { btnToTop } from "./modules/btnToTop";
 import { accordion } from './modules/accordion';
+import { languageControle } from "./modules/language";
 
-document.addEventListener("DOMContentLoaded", () => {
-	addHeaderToHTML();
+document.addEventListener("DOMContentLoaded", async () => {
+	await addHeaderToHTML();
 	addFooterToHTML();
 
 	showSliders();
@@ -17,5 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	accordion('faq');
 
 	productControle();
+
+	languageControle();
 });
 
