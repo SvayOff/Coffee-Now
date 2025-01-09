@@ -26,7 +26,6 @@ export const languageControle = (): void => {
 		}
 	}
 
-
 	const clickOutsideLanguage = (e: Event): void => {
 		const target = e.target as HTMLElement;
 
@@ -41,6 +40,7 @@ export const languageControle = (): void => {
 			langDefault.lang = target.dataset.lang;
 
 			setDefaultLanguage();
+			saveLanguageToLS();
 			closeLanguagePopup();
 		};
 	};
@@ -56,6 +56,22 @@ export const languageControle = (): void => {
 		language.classList.remove('show');
 	};
 
+	const saveLanguageToLS = (): void => {
+		localStorage.setItem('language', JSON.stringify(langDefault));
+	};
+
+	const getLanguageFromLS = (): void => {
+		const language = localStorage.getItem('language');
+
+		if (language) {
+			const parsedLanguage = JSON.parse(language);
+
+			langDefault.langName = parsedLanguage.langName;
+			langDefault.lang = parsedLanguage.lang;
+		};
+	};
+
+	getLanguageFromLS();
 	setDefaultLanguage();
 
 	language.addEventListener('click', (e: Event) => onClickLanguage(e));
