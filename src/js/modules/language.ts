@@ -1,3 +1,5 @@
+import { allTranslations } from "../../data/translations/allTranslation";
+
 export const languageControle = (): void => {
 	const language = document.querySelector<HTMLDivElement>('.header__lang')!;
 	const languageTitle = document.querySelector<HTMLButtonElement>('.header__lang-title_btn');
@@ -9,7 +11,7 @@ export const languageControle = (): void => {
 
 	type LangType = {
 		langName: string;
-		lang: string;
+		lang: 'ua' | 'en';
 	};
 
 	const onClickLanguage = (e: Event): void => {
@@ -18,13 +20,23 @@ export const languageControle = (): void => {
 		toggleLanguagePopup(target);
 
 		choiseLanguage(target);
-	}
+	};
 
 	const toggleLanguagePopup = (target: HTMLElement): void => {
 		if (target.classList.contains('header__lang-title_btn')) {
 			language.classList.toggle('show');
 		}
-	}
+	};
+
+	const translatePages = (lang: 'ua' | 'en') => {
+		Object.entries(allTranslations).forEach(([key, translation]) => {
+			const elements = document.querySelectorAll('.lng-' + key);
+
+			elements.forEach((elem) => {
+				elem.innerHTML = translation[lang];
+			});
+		});
+	};
 
 	const clickOutsideLanguage = (e: Event): void => {
 		const target = e.target as HTMLElement;
@@ -32,16 +44,23 @@ export const languageControle = (): void => {
 		if (target && !target.closest('.header__lang')) {
 			closeLanguagePopup();
 		};
-	}
+	};
 
 	const choiseLanguage = (target: HTMLElement): void => {
 		if (target.classList.contains('header__lang-item_btn') && target.dataset.lang) {
-			langDefault.langName = target.innerText;
-			langDefault.lang = target.dataset.lang;
+			const selectedLang = target.dataset.lang;
 
-			setDefaultLanguage();
-			saveLanguageToLS();
-			closeLanguagePopup();
+			if (selectedLang === 'ua' || selectedLang === 'en') {
+				langDefault.langName = target.innerText;
+				langDefault.lang = selectedLang;
+
+				setDefaultLanguage();
+				saveLanguageToLS();
+				translatePages(langDefault.lang);
+				closeLanguagePopup();
+			} else {
+				console.error('Unsupported language:', selectedLang);
+			}
 		};
 	};
 
@@ -73,6 +92,7 @@ export const languageControle = (): void => {
 
 	getLanguageFromLS();
 	setDefaultLanguage();
+	translatePages(langDefault.lang);
 
 	language.addEventListener('click', (e: Event) => onClickLanguage(e));
 	document.addEventListener('click', (e: Event) => clickOutsideLanguage(e));
