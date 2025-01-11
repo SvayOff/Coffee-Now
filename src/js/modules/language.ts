@@ -1,17 +1,17 @@
 import { allTranslations } from "../../data/translations/allTranslation";
 
+export type LangType = {
+	langName: string;
+	lang: 'ua' | 'en';
+};
+
 export const languageControle = (): void => {
+	const currentUrl = new URL(window.location.href);
 	const language = document.querySelector<HTMLDivElement>('.header__lang')!;
 	const languageTitle = document.querySelector<HTMLButtonElement>('.header__lang-title_btn');
-
 	const langDefault: LangType = {
 		langName: 'Українська',
 		lang: 'ua'
-	};
-
-	type LangType = {
-		langName: string;
-		lang: 'ua' | 'en';
 	};
 
 	const onClickLanguage = (e: Event): void => {
@@ -28,6 +28,10 @@ export const languageControle = (): void => {
 		}
 	};
 
+	const closeLanguagePopup = (): void => {
+		language.classList.remove('show');
+	};
+
 	const translatePages = (lang: 'ua' | 'en') => {
 		Object.entries(allTranslations).forEach(([key, translation]) => {
 			const elements = document.querySelectorAll('.lng-' + key);
@@ -36,14 +40,6 @@ export const languageControle = (): void => {
 				elem.innerHTML = translation[lang];
 			});
 		});
-	};
-
-	const clickOutsideLanguage = (e: Event): void => {
-		const target = e.target as HTMLElement;
-
-		if (target && !target.closest('.header__lang')) {
-			closeLanguagePopup();
-		};
 	};
 
 	const choiseLanguage = (target: HTMLElement): void => {
@@ -56,10 +52,9 @@ export const languageControle = (): void => {
 
 				setDefaultLanguage();
 				saveLanguageToLS();
+				setLanguageToUrl(langDefault.lang);
 				translatePages(langDefault.lang);
 				closeLanguagePopup();
-			} else {
-				console.error('Unsupported language:', selectedLang);
 			}
 		};
 	};
@@ -71,8 +66,18 @@ export const languageControle = (): void => {
 		}
 	}
 
-	const closeLanguagePopup = (): void => {
-		language.classList.remove('show');
+	const clickOutsideLanguage = (e: Event): void => {
+		const target = e.target as HTMLElement;
+
+		if (target && !target.closest('.header__lang')) {
+			closeLanguagePopup();
+		};
+	};
+
+	const setLanguageToUrl = (lang: 'ua' | 'en') => {
+		currentUrl.searchParams.set('lang', lang);
+
+		history.pushState({}, '', currentUrl);
 	};
 
 	const saveLanguageToLS = (): void => {
@@ -92,6 +97,7 @@ export const languageControle = (): void => {
 
 	getLanguageFromLS();
 	setDefaultLanguage();
+	setLanguageToUrl(langDefault.lang);
 	translatePages(langDefault.lang);
 
 	language.addEventListener('click', (e: Event) => onClickLanguage(e));
