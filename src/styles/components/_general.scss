@@ -490,6 +490,7 @@
 .wishlist,
 .cart {
   position: relative;
+  z-index: 5;
   &.show {
     .wishlist__wrapper {
       display: block;
@@ -539,6 +540,7 @@
     padding: 15px;
     width: 270px;
     border-radius: 10px;
+    box-shadow: 0 0 5px 0px rgba($color: $coffee, $alpha: 0.2);
     &.show {
       display: block;
     }
