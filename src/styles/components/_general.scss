@@ -167,6 +167,11 @@
       grid-template-rows: 1fr;
       padding: 15px;
     }
+    .lang__title-btn {
+      &::after {
+        scale: (-1);
+      }
+    }
   }
 
   &__list {
