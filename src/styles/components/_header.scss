@@ -34,12 +34,20 @@
         padding-right: 15px;
       }
       &:hover {
+        .header__navigation-link {
+          opacity: 0.7;
+        }
         .header__navigation-sublist {
           padding: 15px;
           grid-template-rows: 1fr;
         }
         .header__navigation-subitem + .header__navigation-subitem {
           margin-top: 10px;
+        }
+        &::after {
+          scale: (-1);
+          bottom: 3px;
+          opacity: 0.7;
         }
       }
     }
@@ -48,9 +56,6 @@
       position: relative;
       color: $coffee;
       @include fSemiBold;
-      &:hover {
-        opacity: 0.7;
-      }
     }
 
     &-sublist {

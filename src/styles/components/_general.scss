@@ -10,7 +10,7 @@
     border-left: transparent;
     border-top: transparent;
     transform: rotateZ(45deg);
-    transition: transform 0.2s linear;
+    transition: transform 0.2s ease;
     pointer-events: none;
   }
 }
@@ -170,6 +170,7 @@
     .lang__title-btn {
       &::after {
         scale: (-1);
+        bottom: 3px;
       }
     }
   }
