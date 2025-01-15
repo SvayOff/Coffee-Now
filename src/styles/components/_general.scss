@@ -971,6 +971,44 @@
   }
 }
 
+.loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: $bgL;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+
+  &__cup {
+    position: absolute;
+    height: 140px;
+    width: 180px;
+    border: 6px solid $secondaryL;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0 0 70px 70px;
+    z-index: 5;
+    // background: url('/images/general/');
+    background-repeat: repeat-x;
+    background-position: 0px 140px;
+    animation: fill 2.5s infinite;
+    box-shadow: 0 0 0 6px $coffee;
+    &-handle {
+      position: relative;
+      height: 70px;
+      width: 40px;
+      background-color: transparent;
+      border: 6px solid $coffee;
+      border-left: none;
+      left: 180px;
+      top: 2px;
+      border-radius: 0 25px 80px 0;
+    }
+  }
+}
+
 .popup {
   display: none;
   position: fixed;
