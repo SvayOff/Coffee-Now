@@ -990,11 +990,12 @@
     transform: translate(-50%, -50%);
     border-radius: 0 0 70px 70px;
     z-index: 5;
-    // background: url('/images/general/');
     background-repeat: repeat-x;
     background-position: 0px 140px;
     animation: fill 2.5s infinite;
     box-shadow: 0 0 0 6px $coffee;
+    &-mask {
+    }
     &-handle {
       position: relative;
       height: 70px;
