@@ -972,6 +972,7 @@
 }
 
 .loader {
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -979,22 +980,28 @@
   height: 100%;
   width: 100%;
   z-index: 100;
-
   &__cup {
     position: absolute;
     height: 140px;
     width: 180px;
     border: 6px solid $secondaryL;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 0 0 70px 70px;
     z-index: 5;
-    background-repeat: repeat-x;
-    background-position: 0px 140px;
-    animation: fill 2.5s infinite;
     box-shadow: 0 0 0 6px $coffee;
+    overflow: hidden;
+    &-inner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(220px - 6px);
+      height: 140px;
+    }
     &-mask {
+      position: absolute;
+      bottom: -180px;
+      left: 0;
+      animation: fill 2.5s infinite;
     }
     &-handle {
       position: relative;
