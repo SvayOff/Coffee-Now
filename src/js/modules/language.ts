@@ -1,4 +1,5 @@
 import { allTranslations } from "../../data/translations/allTranslation";
+import { onClickOutsidePopup } from "../helpers/onClickOutsidePopup";
 
 export type LangType = {
 	langName: string;
@@ -14,7 +15,7 @@ export const languageControle = (): void => {
 		lang: 'ua'
 	};
 
-	const onClickLanguage = (e: Event): void => {
+	const onClickLanguage = (e: MouseEvent): void => {
 		const target = e.target as HTMLElement;
 
 		toggleLanguagePopup(target);
@@ -66,14 +67,6 @@ export const languageControle = (): void => {
 		}
 	}
 
-	const clickOutsideLanguage = (e: Event): void => {
-		const target = e.target as HTMLElement;
-
-		if (target && !target.closest('.header__lang')) {
-			closeLanguagePopup();
-		};
-	};
-
 	const setLanguageToUrl = (lang: 'ua' | 'en') => {
 		currentUrl.searchParams.set('lang', lang);
 
@@ -100,6 +93,6 @@ export const languageControle = (): void => {
 	setLanguageToUrl(langDefault.lang);
 	translatePages(langDefault.lang);
 
-	language.addEventListener('click', (e: Event) => onClickLanguage(e));
-	document.addEventListener('click', (e: Event) => clickOutsideLanguage(e));
+	language.addEventListener('click', (e: MouseEvent) => onClickLanguage(e));
+	document.addEventListener('click', (e: MouseEvent) => onClickOutsidePopup(e, 'header__lang', closeLanguagePopup));
 };

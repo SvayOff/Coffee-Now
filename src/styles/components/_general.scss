@@ -497,15 +497,12 @@
 .cart {
   position: relative;
   z-index: 5;
-  &.show {
-    .wishlist__wrapper {
-      display: block;
-    }
-  }
-
   &__icon {
     position: relative;
     cursor: pointer;
+    svg {
+      pointer-events: none;
+    }
     &:hover {
       svg {
         opacity: 0.7;
@@ -527,14 +524,7 @@
     border-radius: 50%;
     font-size: 14px;
     color: #fff;
-  }
-
-  &__product {
-    position: relative;
-    border: 2px solid $accentL;
-    box-shadow: 0px 0px 5px 0px $accentL;
-    padding: 15px;
-    border-radius: 10px;
+    pointer-events: none;
   }
 
   &__wrapper {
@@ -561,6 +551,11 @@
   }
 
   &__product {
+    position: relative;
+    border: 2px solid $accentL;
+    box-shadow: 0px 0px 5px 0px $accentL;
+    padding: 15px;
+    border-radius: 10px;
     &-top {
       display: flex;
       align-items: center;
@@ -608,14 +603,25 @@
       width: max-content;
     }
 
-    &-close {
-      top: 15px;
-      right: 15px;
+    &-remove {
+      right: 7px;
+      top: 7px;
     }
+  }
+
+  &__close {
+    top: 15px;
+    right: 15px;
   }
 }
 
 .wishlist {
+  &.show {
+    .wishlist__wrapper {
+      display: block;
+    }
+  }
+
   &__icon {
     svg {
       width: 24px;
@@ -658,13 +664,17 @@
     }
 
     &-remove {
-      right: 7px;
-      top: 7px;
     }
   }
 }
 
 .cart {
+  &.show {
+    .cart__wrapper {
+      display: block;
+    }
+  }
+
   &__icon {
     svg {
       width: 26px;
@@ -707,7 +717,7 @@
     }
 
     &-add,
-    &-remove {
+    &-subtract {
       position: relative;
       width: 20px;
       height: 20px;
@@ -753,7 +763,7 @@
       @include fMedium;
     }
 
-    &-remove {
+    &-subtract {
       &::after {
         display: none;
       }
