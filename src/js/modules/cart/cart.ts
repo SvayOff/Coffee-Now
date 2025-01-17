@@ -16,11 +16,11 @@ export const cartControle = (): void => {
 		) {
 			cart.classList.toggle('show');
 		};
-	}
+	};
 
 	const closeCartPopup = (): void => {
 		cart.classList.remove('show');
-	}
+	};
 
 	cart.addEventListener('click', (e: MouseEvent) => onClickCart(e));
 	document.addEventListener('click', (e: MouseEvent) => onClickOutsidePopup(e, 'cart', closeCartPopup));
