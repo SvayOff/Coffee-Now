@@ -1,12 +1,12 @@
 import { allTranslations } from "../../data/translations/allTranslation";
-import { onClickOutsidePopup } from "../helpers/onClickOutsidePopup";
+import { onClickOutsidePopup } from "../helpers";
 
 export type LangType = {
 	langName: string;
 	lang: 'ua' | 'en';
 };
 
-export const languageControle = (): void => {
+const languageControle = (): void => {
 	const currentUrl = new URL(window.location.href);
 	const language = document.querySelector<HTMLDivElement>('.header__lang')!;
 	const languageTitle = document.querySelector<HTMLButtonElement>('.header__lang-title_btn');
@@ -96,3 +96,5 @@ export const languageControle = (): void => {
 	language.addEventListener('click', (e: MouseEvent) => onClickLanguage(e));
 	document.addEventListener('click', (e: MouseEvent) => onClickOutsidePopup(e, 'header__lang', closeLanguagePopup));
 };
+
+export default languageControle;

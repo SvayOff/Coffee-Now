@@ -1,6 +1,6 @@
 const btn = document.querySelector('.button__to-top') as HTMLButtonElement;
 
-export const btnToTop = () => {
+const btnToTop = () => {
 	const scrollToTop = (e: Event) => {
 		document.body.scrollTo({
 			top: 0,
@@ -21,4 +21,6 @@ export const btnToTop = () => {
 	document.body.addEventListener('scroll', () => showBtn(btn));
 	btn.addEventListener('click', (e) => scrollToTop(e));
 };
+
+export default btnToTop;
 

@@ -1,4 +1,4 @@
-export const addAnimToBtn = (
+const addAnimToBtn = (
 	parentEl: HTMLElement,
 	animAddedClassName: string,
 	animEndedClassName: string
@@ -12,3 +12,5 @@ export const addAnimToBtn = (
 		setTimeout(() => parentEl.classList.remove(animEndedClassName), 400);
 	}, 600);
 };
+
+export default addAnimToBtn;

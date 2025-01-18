@@ -107,6 +107,13 @@
         grid-template-rows: 1fr;
         padding: 15px;
       }
+      .header__account-personal {
+        &::after {
+          scale: (-1);
+          bottom: 3px;
+          opacity: 0.7;
+        }
+      }
     }
     &-personal {
       background-color: transparent;
@@ -123,8 +130,10 @@
       display: grid;
       grid-template-rows: 0fr;
       position: absolute;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
       top: 30px;
+      width: max-content;
       background-color: $secondaryL;
       padding: 0 15px;
       font-size: 18px;

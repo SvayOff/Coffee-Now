@@ -1,4 +1,4 @@
-export const accordion = (className: string) => {
+const accordion = (className: string) => {
 	const accordionList = document.querySelector(`.${className}__list`) as HTMLOListElement || null;
 
 	accordionList?.addEventListener('click', (e: MouseEvent) => toggleAccordionItems(e))
@@ -15,3 +15,5 @@ export const accordion = (className: string) => {
 		}
 	};
 }
+
+export default accordion;

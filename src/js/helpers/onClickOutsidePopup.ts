@@ -1,4 +1,4 @@
-export const onClickOutsidePopup = (
+const onClickOutsidePopup = (
 	e: MouseEvent,
 	className: string,
 	closePopupFn: () => void
@@ -9,3 +9,5 @@ export const onClickOutsidePopup = (
 		closePopupFn();
 	};
 };
+
+export default onClickOutsidePopup;

@@ -1,4 +1,4 @@
-import { addAnimToBtn } from "../../helpers/addAnimToBtn";
+import { addAnimToBtn } from "../../helpers";
 
 export const productBuyBtn = () => {
 	const products = document.querySelectorAll<HTMLElement>('.product__item');

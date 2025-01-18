@@ -1,6 +1,6 @@
-import { onClickOutsidePopup } from "../../helpers/onClickOutsidePopup";
+import { onClickOutsidePopup } from "../../helpers";
 
-export const cartControle = (): void => {
+const cartControle = (): void => {
 	const cart = document.querySelector<HTMLDivElement>('.cart')!;
 
 	const onClickCart = (e: MouseEvent): void => {
@@ -25,3 +25,5 @@ export const cartControle = (): void => {
 	cart.addEventListener('click', (e: MouseEvent) => onClickCart(e));
 	document.addEventListener('click', (e: MouseEvent) => onClickOutsidePopup(e, 'cart', closeCartPopup));
 };
+
+export default cartControle;

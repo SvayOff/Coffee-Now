@@ -1,6 +1,6 @@
-import { onClickOutsidePopup } from "../../helpers/onClickOutsidePopup";
+import { onClickOutsidePopup } from "../../helpers";
 
-export const wishlistControle = (): void => {
+const wishlistControle = (): void => {
 	const wishlist = document.querySelector<HTMLDivElement>('.wishlist')!;
 
 	const onClickWishlist = (e: MouseEvent): void => {
@@ -25,3 +25,5 @@ export const wishlistControle = (): void => {
 	wishlist.addEventListener('click', (e: MouseEvent) => onClickWishlist(e));
 	document.addEventListener('click', (e: MouseEvent) => onClickOutsidePopup(e, 'wishlist', closeWishlistPopup));
 };
+
+export default wishlistControle;

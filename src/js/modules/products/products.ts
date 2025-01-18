@@ -1,4 +1,4 @@
-import { productBuyBtn } from "./productBuyAnim";
+import { productBuyBtn } from "./productBuyBtn";
 
 const productControle = () => {
 	productBuyBtn();
