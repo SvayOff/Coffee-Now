@@ -12,5 +12,5 @@ export type Translations = {
 
 export const allTranslations: Translations = {
 	...homeTranslations,
-	...shopTranslations
+	...shopTranslations,
 };
