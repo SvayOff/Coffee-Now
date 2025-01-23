@@ -1,3 +1,4 @@
+import { headerTranslations } from "./headerTranslations";
 import { homeTranslations } from "./homeTranslations";
 import { shopTranslations } from "./shopTranslations";
 
@@ -11,6 +12,7 @@ export type Translations = {
 }
 
 export const allTranslations: Translations = {
+	...headerTranslations,
 	...homeTranslations,
 	...shopTranslations,
 };
