@@ -1,4 +1,4 @@
-import { languageControle } from "../futures/language";
+import  languageControle  from "../futures/language";
 
 const globalObserver = (): void => {
 	const observer = new MutationObserver(() => {

@@ -24,6 +24,7 @@
   border: none;
   transition: transform 0.2s ease;
   will-change: transform;
+
   &::before,
   &::after {
     content: '';
@@ -35,12 +36,15 @@
     height: 2px;
     background-color: $coffee;
   }
+
   &::before {
     transform: rotateZ(-45deg);
   }
+
   &::after {
     transform: rotateZ(45deg);
   }
+
   &:hover {
     transform: scale(1.1);
   }
@@ -49,24 +53,30 @@
 .socials {
   display: flex;
   align-items: center;
+
   &__item {
     transition: transform 0.3s ease;
-    & + & {
+
+    &+& {
       margin-left: 10px;
     }
+
     &:hover {
       transform: translateY(-5px);
     }
+
     &-inst {
       path {
         fill: $coffee;
       }
     }
+
     &-telegram {
       path {
         stroke: $coffee;
       }
     }
+
     &-facebook {
       path {
         stroke: $coffee;
@@ -91,6 +101,7 @@
   position: relative;
   width: max-content;
   margin: 0 auto;
+
   &::before,
   &::after {
     content: '';
@@ -131,11 +142,13 @@
   align-items: center;
   @include fBold;
   color: $coffee;
+
   &__image {
     width: 40px;
     padding: 0 5px;
     transition: transform 0.5s ease;
   }
+
   &:hover {
     .logo__image {
       transform: rotateZ(45deg);
@@ -147,10 +160,12 @@
   position: relative;
   font-size: 18px;
   width: 115px;
+
   &__title {
     display: flex;
     width: 100%;
     justify-content: center;
+
     &-btn {
       position: relative;
       background-color: transparent;
@@ -167,6 +182,7 @@
       grid-template-rows: 1fr;
       padding: 15px;
     }
+
     .lang__title-btn {
       &::after {
         scale: (-1);
@@ -196,12 +212,15 @@
   &__item {
     cursor: pointer;
     text-align: center;
+
     &:hover {
       opacity: 0.7;
     }
-    & + & {
+
+    &+& {
       margin-top: 10px;
     }
+
     &-btn {
       background-color: transparent;
       border: none;
@@ -223,6 +242,7 @@
   transition: all 0.5s ease;
   border: 1px solid $coffee;
   width: max-content;
+
   &:hover {
     background-color: $secondaryL;
   }
@@ -242,16 +262,20 @@
   transition: all 0.3s ease;
   animation: pulse 1s infinite alternate;
   box-shadow: 0 0 5px 0 rgba($color: $coffee, $alpha: 0.2);
+
   &:hover {
     background-color: $coffee;
+
     &::before,
     &::after {
       border-color: $secondaryL;
     }
   }
+
   &.show {
     display: block;
   }
+
   &::before,
   &::after {
     content: '';
@@ -263,12 +287,14 @@
     transform: rotateZ(-45deg);
     transition: border-color 0.3s ease;
   }
+
   &::before {
     width: 20px;
     height: 20px;
     left: 13px;
     top: 15px;
   }
+
   &::after {
     width: 15px;
     height: 15px;
@@ -289,9 +315,11 @@
     border-radius: 20px;
     background-color: $accentL;
     border: 1px solid $coffee;
+
     &-image {
       width: 120px;
       margin: 0 auto;
+
       img {
         width: 100%;
       }
@@ -324,6 +352,7 @@
     &-ingredient {
       position: relative;
       width: max-content;
+
       &::before {
         content: '';
         position: absolute;
@@ -345,6 +374,7 @@
     &-price {
       font-size: 21px;
       @include fMedium;
+
       span {
         @include fBold;
       }
@@ -360,6 +390,7 @@
       border-radius: 50%;
       cursor: pointer;
       overflow: hidden;
+
       svg {
         position: absolute;
         left: 50%;
@@ -369,10 +400,12 @@
         transition: transform 0.7s ease, opacity 0.7s ease;
         pointer-events: none;
       }
+
       path,
       circle {
         stroke: $coffee;
       }
+
       &:hover {
         svg {
           transform: translate(-60%, -50%);
@@ -394,6 +427,7 @@
         }
       }
     }
+
     &.cart-return {
       .product__item-buy {
         svg {
@@ -415,6 +449,7 @@
       padding: 10px;
       border-radius: 20px;
     }
+
     &-favorite,
     &-more {
       position: absolute;
@@ -430,17 +465,20 @@
       border: 1px solid $coffee;
       border-radius: 50%;
       cursor: pointer;
+
       &:hover {
         svg {
           transform: rotateY(180deg);
         }
       }
+
       svg {
         width: 16px;
         height: 16px;
         transition: transform 0.5s ease;
         pointer-events: none;
       }
+
       path {
         fill: $coffee;
       }
@@ -448,6 +486,7 @@
 
     &-more {
       top: 75px;
+
       svg {
         width: 20px;
         height: 20px;
@@ -471,10 +510,12 @@
 
   &:hover {
     background-color: $coffee;
+
     &::after {
       border-color: $accentL;
     }
   }
+
   &::after {
     top: 50%;
     left: 50%;
@@ -497,12 +538,15 @@
 .cart {
   position: relative;
   z-index: 5;
+
   &__icon {
     position: relative;
     cursor: pointer;
+
     svg {
       pointer-events: none;
     }
+
     &:hover {
       svg {
         opacity: 0.7;
@@ -537,6 +581,7 @@
     width: 270px;
     border-radius: 10px;
     box-shadow: 0 0 5px 0px rgba($color: $coffee, $alpha: 0.2);
+
     &.show {
       display: block;
     }
@@ -556,10 +601,12 @@
     box-shadow: 0px 0px 5px 0px $accentL;
     padding: 15px;
     border-radius: 10px;
+
     &-top {
       display: flex;
       align-items: center;
     }
+
     &-image {
       width: 60px;
       background-position: center;
@@ -580,6 +627,7 @@
       margin-top: 5px;
       font-size: 18px;
       @include fMedium;
+
       span {
         @include fBold;
       }
@@ -588,6 +636,7 @@
     &-desc {
       margin-top: 5px;
     }
+
     &-subtitle {
       font-size: 18px;
       @include fBold;
@@ -626,45 +675,35 @@
     svg {
       width: 24px;
       height: 24px;
+
       path {
         fill: $coffee;
       }
     }
   }
 
-  &__count {
-  }
+  &__count {}
 
-  &__wrapper {
-  }
+  &__wrapper {}
 
-  &__title {
-  }
+  &__title {}
 
-  &__products {
-  }
+  &__products {}
 
   &__product {
-    &-image {
-    }
+    &-image {}
 
-    &-info {
-    }
+    &-info {}
 
-    &-name {
-    }
+    &-name {}
 
-    &-ingredients {
-    }
+    &-ingredients {}
 
-    &-ingredient {
-    }
+    &-ingredient {}
 
-    &-price {
-    }
+    &-price {}
 
-    &-remove {
-    }
+    &-remove {}
   }
 }
 
@@ -682,33 +721,24 @@
     }
   }
 
-  &__count {
-  }
+  &__count {}
 
-  &__wrapper {
-  }
+  &__wrapper {}
 
-  &__title {
-  }
+  &__title {}
 
-  &__products {
-  }
+  &__products {}
 
   &__product {
-    &-image {
-    }
+    &-image {}
 
-    &-info {
-    }
+    &-info {}
 
-    &-name {
-    }
+    &-name {}
 
-    &-ingredients {
-    }
+    &-ingredients {}
 
-    &-ingredient {
-    }
+    &-ingredient {}
 
     &-counting {
       display: flex;
@@ -727,10 +757,12 @@
       cursor: pointer;
       will-change: transfrom;
       transition: transform 0.3s ease;
+
       &:hover {
         transform: scale(0.9);
         transform-origin: center;
       }
+
       &::before,
       &::after {
         content: '';
@@ -741,10 +773,12 @@
         background-color: $coffee;
         pointer-events: none;
       }
+
       &::before {
         width: 10px;
         height: 2px;
       }
+
       &::after {
         height: 10px;
         width: 2px;
@@ -770,18 +804,17 @@
     }
 
     &-add {
-      &::before {
-      }
+      &::before {}
     }
 
-    &-price {
-    }
+    &-price {}
   }
 
   &__total {
     font-size: 20px;
     @include fSemiBold;
     margin-top: 20px;
+
     span {
       @include fBold;
     }
@@ -791,6 +824,7 @@
 .decor-coffee {
   position: absolute;
   z-index: -1;
+
   &__image {
     width: 100%;
     background-position: center;
@@ -814,8 +848,7 @@
     margin: 0 auto;
   }
 
-  &__title {
-  }
+  &__title {}
 
   &__description {
     margin-top: 30px;
@@ -834,22 +867,26 @@
     right: 8px;
     top: 50%;
     transform: translateY(-50%);
+
     svg {
       width: 20px;
       fill: $coffee;
       pointer-events: none;
     }
+
     path {
       stroke: $coffee;
     }
-    &-email {
-    }
+
+    &-email {}
+
     &-password {
       background-color: transparent;
       border: none;
       height: auto;
       line-height: 0;
       cursor: pointer;
+
       &::before {
         content: '';
         position: absolute;
@@ -863,11 +900,13 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       }
+
       &.hidden {
         &::before {
           opacity: 1;
         }
       }
+
       svg {
         width: 24px;
       }
@@ -883,8 +922,9 @@
     font-size: 18px;
     @include fMedium;
     padding: 0 35px 0 5px;
-    &:focus ~ .form__label,
-    &:valid ~ .form__label {
+
+    &:focus~.form__label,
+    &:valid~.form__label {
       top: -5px;
     }
   }
@@ -921,6 +961,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+
     &:hover {
       text-decoration: underline;
     }
@@ -943,10 +984,12 @@
     cursor: pointer;
     padding: 10px;
     gap: 10px;
+
     &:hover {
       background: $coffee;
       color: $bgL;
     }
+
     svg {
       width: 20px;
     }
@@ -957,6 +1000,7 @@
     width: 100%;
     background-color: $coffee;
     color: $bgL;
+
     &:hover {
       background-color: transparent;
       color: $coffee;
@@ -969,14 +1013,64 @@
     font-size: 18px;
   }
 
-  &__text {
-  }
+  &__text {}
 
   &__link {
     color: $coffee;
     @include fMedium;
+
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid $coffee;
+    background-color: transparent;
+  }
+
+  &__arrow {
+    position: relative;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    font-size: 18px;
+    margin: 0 5px;
+
+    &+& {
+      margin-left: 0;
+    }
+
+    &.active {
+      .pagination__btn {
+        background-color: $coffee;
+        color: $accentL;
+      }
+    }
+  }
+
+  &__btn {
+    color: $coffee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $coffee;
+      color: $accentL;
     }
   }
 }
@@ -990,6 +1084,7 @@
   height: 100%;
   width: 100%;
   z-index: 100;
+
   &__cup {
     position: absolute;
     height: 140px;
@@ -999,6 +1094,7 @@
     z-index: 5;
     box-shadow: 0 0 0 6px $coffee;
     overflow: hidden;
+
     &-inner {
       position: absolute;
       left: 50%;
@@ -1007,12 +1103,14 @@
       width: calc(220px - 6px);
       height: 140px;
     }
+
     &-mask {
       position: absolute;
       bottom: -180px;
       left: 0;
       animation: fill 2.5s infinite;
     }
+
     &-handle {
       position: relative;
       height: 70px;
@@ -1025,6 +1123,10 @@
       border-radius: 0 25px 80px 0;
     }
   }
+
+  &.show {
+    display: block;
+  }
 }
 
 .popup {
@@ -1034,6 +1136,7 @@
   height: 100%;
   z-index: 100;
   background-color: $bgL;
+
   &__inner {
     display: flex;
     justify-content: center;
@@ -1041,6 +1144,7 @@
     min-height: 100%;
     padding: 0 30px;
   }
+
   &__content {
     position: relative;
     border: 1px solid $coffee;
@@ -1049,21 +1153,78 @@
     max-width: 500px;
     width: 100%;
   }
+
   &.show {
     display: block;
   }
+
   .close {
     right: 20px;
     top: 20px;
   }
 }
 
+
+.steps {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  &__step {
+    position: relative;
+
+    &+& {
+      margin-left: 60px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 1px;
+        background-color: $coffee;
+        left: -45px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+
+
+    &-btn {
+      color: $coffee;
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+
+      &.active {
+        @include fBold;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        opacity: .7;
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
 section:hover {
   .title {
+
     &::before,
     &::after {
       height: 0;
     }
+
     &::before {
       left: 0;
       top: calc(100% + 2px);

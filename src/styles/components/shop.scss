@@ -17,8 +17,8 @@
     position: relative;
     margin: 15px 0;
     width: 100%;
-    &-row {
-    }
+
+    &-row {}
 
     &-input {
       width: 100%;
@@ -30,9 +30,11 @@
       outline: none;
       background-color: $accentL;
       color: $coffee;
+
       &::placeholder {
         color: $coffee;
       }
+
       &:focus {
         box-shadow: 0 0 5px 0px rgba($color: $coffee, $alpha: 0.2);
       }
@@ -49,38 +51,35 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+
       path {
         fill: $coffee;
       }
     }
 
-    &-list {
-    }
+    &-list {}
 
-    &-item {
-    }
+    &-item {}
   }
 
-  &__filters {
-  }
+  &__filters {}
 
   &__filter {
-    & + & {
+    &+& {
       margin-top: 15px;
     }
-    &-categories {
-    }
+
+    &-categories {}
 
     &-subtitle {
       margin-bottom: 10px;
       font-size: 20px;
     }
 
-    &-content {
-    }
+    &-content {}
 
     &-row {
-      & + & {
+      &+& {
         margin-top: 2px;
       }
     }
@@ -99,11 +98,13 @@
     &-sort {
       position: relative;
       width: max-content;
+
       button {
         cursor: pointer;
         background-color: transparent;
         border: none;
       }
+
       &.show {
         .shop__filter-list {
           grid-template-rows: 1fr;
@@ -146,10 +147,12 @@
     &-item {
       cursor: pointer;
       font-size: 18px;
+
       &:hover {
         opacity: 0.7;
       }
-      & + & {
+
+      &+& {
         margin-top: 5px;
       }
     }
@@ -158,8 +161,7 @@
       width: max-content;
     }
 
-    &-price {
-    }
+    &-price {}
 
     &-values {
       display: flex;
@@ -182,20 +184,20 @@
       outline: none;
       color: $coffee;
       background-color: $accentL;
+
       &::placeholder {
         color: $coffee;
       }
+
       &:focus {
         box-shadow: 0 0 5px 0px rgba($color: $coffee, $alpha: 0.2);
       }
     }
 
-    &-range {
-    }
+    &-range {}
   }
 
-  &__content {
-  }
+  &__content {}
 
   &__products {
     display: grid;
@@ -204,79 +206,35 @@
   }
 
   &__item {
-    &-image {
-    }
+    &-image {}
 
-    &-title {
-    }
+    &-title {}
 
-    &-desc {
-    }
+    &-desc {}
 
-    &-ingredients {
-    }
+    &-ingredients {}
 
-    &-ingredient {
-    }
+    &-ingredient {}
 
-    &-bottom {
-    }
+    &-bottom {}
 
-    &-price {
-    }
+    &-price {}
 
-    &-buy {
-    }
+    &-buy {}
 
-    &-new {
-    }
+    &-new {}
 
-    &-favorite {
-    }
+    &-favorite {}
   }
 
   &__pagination {
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    button {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      border: 1px solid $coffee;
-      background-color: transparent;
-    }
-    &-arrow {
-      position: relative;
-    }
 
-    &-list {
-      display: flex;
-      align-items: center;
-    }
+    &-arrow {}
 
-    &-item {
-      font-size: 18px;
-      margin: 0 5px;
-      & + & {
-        margin-left: 0;
-      }
-      &.active {
-        .shop__pagination-btn {
-          background-color: $coffee;
-          color: $accentL;
-        }
-      }
-    }
+    &-list {}
 
-    &-btn {
-      color: $coffee;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      &:hover {
-        background-color: $coffee;
-        color: $accentL;
-      }
-    }
+    &-item {}
+
+    &-btn {}
   }
 }
